@@ -2357,8 +2357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 8186673791059433265, guid: b19e1fedaa87aa044a31b1a9d5e01797, type: 3}
-  poolSize: 8
-  spawnRate: 1.2
+  poolSize: 10
+  spawnRate: 1
   minY: -3.18
   maxY: 3.18
 --- !u!1660057539 &9223372036854775807
