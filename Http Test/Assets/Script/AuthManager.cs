@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class AuthManager : MonoBehaviour
 {
     public static AuthManager Instance; 
-    string url = "https://sid-restapi.onrender.com";
+    string url = "http://127.0.0.1:1234";
     string token;
     string username;
 
@@ -171,7 +171,8 @@ public class AuthManager : MonoBehaviour
                     errorMessage += "Error desconocido.";
                     break;
             }
-            Debug.LogError(errorMessage);
+            Debug.LogError(request.downloadHandler.text);
+            Debug.LogError(request.responseCode);
             ShowError(); 
         }
     }
@@ -253,6 +254,7 @@ public class AuthManager : MonoBehaviour
         if (request.result == UnityWebRequest.Result.Success)
         {
             // Deserializar la respuesta de la API
+            Debug.Log(request.downloadHandler.text);
             UsuariosResponse data = JsonUtility.FromJson<UsuariosResponse>(request.downloadHandler.text);
 
             // Ordenar los usuarios por score (de mayor a menor) y tomar los top 5
